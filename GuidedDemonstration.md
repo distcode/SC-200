@@ -3,9 +3,11 @@
 
 This is a collection of all links for GD/IG found in pptx files:
 
-| Module | Title | Link | Notes |
+| Module | Title/Link | Notes |
 | --- | --- | --- | --- |
-| Mod 1 | Detect and respond to modern attacks with a unified SIEM and XDR capabilities | <https://mslearn.cloudguides.com/guides/Investigate%20security%20incidents%20in%20a%20hybrid%20environment%20with%20Azure%20Sentinel> | MS Sentinel Overview |
+| Mod 1 | [Detect and respond to modern attacks with a unified SIEM and XDR capabilities](https://mslearn.cloudguides.com/guides/Investigate%20security%20incidents%20in%20a%20hybrid%20environment%20with%20Azure%20Sentinel) | MS Sentinel Overview |
+
+
 | | MS Defender Security Alerts | https://aka.ms/M365Defender-InteractiveGuide | Good overview of Alerts, Incidents and Investigations (Remediation) |
 | | MS Defender for Office 365 | https://aka.ms/MSDO-IG	| |
 | | MS Defender for Identity | https://mslearn.cloudguides.com/guides/Investigate%20and%20respond%20to%20attacks%20with%20Microsoft%20Defender%20for%20Identity | Super Guide !!! It shows how to perform an attack with tools. |
