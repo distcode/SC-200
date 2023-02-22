@@ -12,8 +12,8 @@ This is a collection of all links for GD/IG found in pptx files:
 | | [MS Defender for Identity II](https://aka.ms/MSDefenderforIdentity-IG) | How to find attacks in Alerts |
 | | [MS Defender for Cloud App](https://aka.ms/DetectThreats-ManageAlerts-MCAS_InteractiveGuide) | It's one of four guides in a series. At the beginning choose other guides: Identify suspicious activities, Discover and manage cloud app usage, Protect and control information, Automate Alerts Management with Power Apps
 | | [MS Insider Risk Management](https://mslearn.cloudguides.com/guides/Minimize%20internal%20risks%20with%20insider%20risk%20management%20in%20Microsoft%20365) |
-| Mod 2 | [Threat and Vulnerability Management](https://aka.ms/MSDE_TVM_IG) | |	
-| Mod 3	| [MS Defender for Cloud (Az Security Center)](https://mslearn.cloudguides.com/guides/Protect%20your%20hybrid%20cloud%20with%20Azure%20Security%20Center) | Three different guides: Manage your cloud security posture, Prevent, detect and respond quickly to modern threats, Unify DevOps security management |
+| Mod 2 | [Threat and Vulnerability Management](https://aka.ms/MSDE_TVM_IG) | |
+| Mod 3 | [MS Defender for Cloud (Az Security Center)](https://mslearn.cloudguides.com/guides/Protect%20your%20hybrid%20cloud%20with%20Azure%20Security%20Center) | Three different guides: Manage your cloud security posture, Prevent, detect and respond quickly to modern threats, Unify DevOps security management |
 
 # Videos
 
@@ -24,8 +24,8 @@ This is the collection of all links to videos provided in pptx files:
 | Mod 1 | [Threat Protection - Incident Mgmt](https://www.microsoft.com/en-us/videoplayer/embed/RE4Bzwz?) |
 | | [Using the new alert experience](https://www.microsoft.com/en-us/videoplayer/embed/RE4yiO5?rel=0&postJsllMsg=true) |
 | | [Automated investigation](https://www.microsoft.com/videoplayer/embed/RE4bOeh?rel=0) |
-| | [Advanced hunting I](https://www.microsoft.com/en-us/videoplayer/embed/RE4bGqo?rel=0&postJsllMsg=true); [Advanced hunting II](https://www.microsoft.com/en-us/videoplayer/embed/RE4COn3?postJsllMsg=true) |
-| | [Threat Analytics](https://www.microsoft.com/en-us/videoplayer/embed/RWwJfU?rel=0) | 
+| | [Advanced hunting I](https://www.microsoft.com/en-us/videoplayer/embed/RE4bGqo?rel=0&postJsllMsg=true);<br> [Advanced hunting II](https://www.microsoft.com/en-us/videoplayer/embed/RE4COn3?postJsllMsg=true) |
+| | [Threat Analytics](https://www.microsoft.com/en-us/videoplayer/embed/RWwJfU?rel=0) |
 | Mod 2 | [Defender for EndPoint - Advanced hunting](https://www.microsoft.com/en-us/videoplayer/embed/RE4bGqo) |
 | | [Incident Investigation](https://www.microsoft.com/en-us/videoplayer/embed/RE4qLUV?rel=0&postJsllMsg=true) |
 | | [Onboarding Clients](https://www.microsoft.com/en-us/videoplayer/embed/RE4bGqr?rel=0&postJsllMsg=true) |
