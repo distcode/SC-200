@@ -1,0 +1,27 @@
+let myHosts = datatable (Hostname:string, Memory:real, CPU:int, Type:string) [
+    "Jupiter",16384,32,"Server",
+    "Mars",8192,8,"Server",
+    "PC01",4096,4,"Client",
+    "PC02",4096,4,"Client",
+    "PC03",2048,2,"Client",
+    "PC04",8192,4,"Client", ];
+let mySoftware = datatable (Name:string, Version:string, Category:string, Hostname:string ) [
+    "Adobe Reader", "latest", "Tool","PC03",
+    "Exchange Server 2019","2019","Productivity","Jupiter",
+    "Microsoft 365 Apps", "2019", "Productivity","PC01",
+    "Solitair", "1.0", "Game","PC03",
+    "SQL Server 2019","2019","Productivity","Mars",
+    "Visual Studio Code","latest","Development","PC99" ];
+
+let myPlanets = datatable (Item:int, Statement:string) [
+    1, "The planet Mercury has a circumference of 15330 km and a mass of 0.33 E+24 kg.",
+    2, "The planet Venus has a circumference of 38023 km and a mass of 4.87 E+24 kg.",
+    3, "The planet Earth has a circumference of 40075 km and a mass of 5.97 E+24 kg.",
+    4, "The planet Mars has a circumference of 21344 km and a mass of 0.64 E+24 kg." ];
+
+let myHostsDetailed = datatable (Hostname:string, Hardware:dynamic , Software:dynamic , Location:string , Devices:dynamic ) [
+    "Jupiter", dynamic({"RAM":8192,"CPU":12,"DiskCapacityGB":512,"DiskCount":6,"DiskVendor":"WD"}), dynamic([{"Product":"Exchange","Vendor":"Microsoft","Version":"2019","BuiltIn":false},{"Product":"FileServer","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Graz", dynamic(["Mouse","FIDO2-USB"]),
+    "Saturn", dynamic({"RAM":8192,"CPU":8,"DiskCapacityGB":768,"DiskCount":12,"DiskVendor":"WD"}), dynamic([{"Product":"SharePoint","Vendor":"Microsoft","Version":"2019","BuiltIn":false},{"Product":"DC","Vendor":"Microsoft","Version":"2022","BuiltIn":true},{"Product":"DNS","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Graz", dynamic(["Mouse","iPhone"]),
+    "Neptune", dynamic({"RAM":4096,"CPU":2,"DiskCapacityGB":256,"DiskCount":4,"DiskVendor":"IBM"}), dynamic([{"Product":"S/4HANA","Vendor":"SAP","Version":"2021","BuiltIn":false},{"Product":"PrintServer","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Linz", dynamic(["Pen","iPhone"]),
+    "Uranos", dynamic({"RAM":6144,"CPU":8,"DiskCapacityGB":512,"DiskCount":8,"DiskVendor":"IBM"}), dynamic([{"Product":"Exchange","Vendor":"Microsoft","Version":"2019","BuiltIn":false},{"Product":"DC","Vendor":"Microsoft","Version":"2022","BuiltIn":true},{"Product":"DNS","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Linz", dynamic(["Mouse","FIDO2-USB"])
+];
