@@ -8,8 +8,8 @@ This is a collection of all links for GD/IG found in pptx files:
 | Mod 1 | [Detect and respond to modern attacks with a unified SIEM and XDR capabilities](https://mslearn.cloudguides.com/guides/Investigate%20security%20incidents%20in%20a%20hybrid%20environment%20with%20Azure%20Sentinel) | MS Sentinel Overview |
 | | [MS Defender Security Alerts](https://aka.ms/M365Defender-InteractiveGuide) | Good overview of Alerts, Incidents and Investigations (Remediation) |
 | | [MS Defender for Office 365](https://aka.ms/MSDO-IG) | |
-| | [MS Defender for Identity I](https://mslearn.cloudguides.com/guides/Investigate%20and%20respond%20to%20attacks%20with%20Microsoft%20Defender%20for%20Identity) | Super Guide !!! It shows how to perform an attack with tools. |
-| | [MS Defender for Identity II](https://aka.ms/MSDefenderforIdentity-IG) | How to find attacks in Alerts |
+| | [MS Defender for Identity I](https://mslearn.cloudguides.com/guides/Investigate%20and%20respond%20to%20attacks%20with%20Microsoft%20Defender%20for%20Identity) | How to find attacks in Alerts. |
+| | [MS Defender for Identity II](https://aka.ms/MSDefenderforIdentity-IG) | Super Guide !!! It shows how to perform an attack with tools. |
 | | [MS Defender for Cloud App](https://aka.ms/DetectThreats-ManageAlerts-MCAS_InteractiveGuide) | It's one of four guides in a series. At the beginning choose other guides: Identify suspicious activities, Discover and manage cloud app usage, Protect and control information, Automate Alerts Management with Power Apps
 | | [MS Insider Risk Management](https://mslearn.cloudguides.com/guides/Minimize%20internal%20risks%20with%20insider%20risk%20management%20in%20Microsoft%20365) |
 | Mod 2 | [Threat and Vulnerability Management](https://aka.ms/MSDE_TVM_IG) | |
