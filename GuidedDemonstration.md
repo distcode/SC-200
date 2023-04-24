@@ -24,7 +24,7 @@ This is the collection of all links to videos provided in pptx files:
 | Mod 1 | [Threat Protection - Incident Mgmt](https://www.microsoft.com/en-us/videoplayer/embed/RE4Bzwz?) |
 | | [Using the new alert experience](https://www.microsoft.com/en-us/videoplayer/embed/RE4yiO5?rel=0&postJsllMsg=true) |
 | | [Automated investigation](https://www.microsoft.com/videoplayer/embed/RE4bOeh?rel=0) |
-| | [Advanced hunting I](https://www.microsoft.com/en-us/videoplayer/embed/RE4bGqo?rel=0&postJsllMsg=true);<br> [Advanced hunting II](https://www.microsoft.com/en-us/videoplayer/embed/RE4COn3?postJsllMsg=true) |
+| | [Advanced hunting I](https://www.microsoft.com/en-us/videoplayer/embed/RE4bGqo?rel=0&postJsllMsg=true) <br> [Advanced hunting II](https://www.microsoft.com/en-us/videoplayer/embed/RE4COn3?postJsllMsg=true) |
 | | [Threat Analytics](https://www.microsoft.com/en-us/videoplayer/embed/RWwJfU?rel=0) |
 | Mod 2 | [Defender for EndPoint - Advanced hunting](https://www.microsoft.com/en-us/videoplayer/embed/RE4bGqo) |
 | | [Incident Investigation](https://www.microsoft.com/en-us/videoplayer/embed/RE4qLUV?rel=0&postJsllMsg=true) |
