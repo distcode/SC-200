@@ -13,6 +13,14 @@ let mySoftware = datatable (Name:string, Version:string, Category:string, Hostna
     "SQL Server 2019","2019","Productivity","Mars",
     "Visual Studio Code","latest","Development","PC99" ];
 
+let myHosts = datatable (Hostname:string, Memory:real, CPU:int, Type:string, DiskCapacityGB:int) [
+    "Jupiter.solarsystem.io",16384,32,"Server",8192,
+    "Mars.solarsystem.io",8192,8,"Server",2024,
+    "PC01.earth.com",4096,4,"Client",512,
+    "PC02.earth.com",4096,4,"Client",256,
+    "PC03.earth.com",2048,2,"Client",256,
+    "PC04.earth.com",8192,4,"Client",1024 ];
+
 let myPlanets = datatable (Item:int, Statement:string) [
     1, "The planet Mercury has a circumference of 15330 km and a mass of 0.33 E+24 kg.",
     2, "The planet Venus has a circumference of 38023 km and a mass of 4.87 E+24 kg.",
