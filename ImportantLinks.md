@@ -30,10 +30,10 @@ MS documentation of [Auditing Standard/Premium](https://learn.microsoft.com/en-u
 
 ## Defender for Endpoint
 
-#### Configuration in Intune portal
+### Configuration in Intune portal
 Configuration settings via [Intune](https://endpoint.microsoft.com) _without_ device registration: [MS documentation](https://learn.microsoft.com/en-us/mem/intune/protect/mde-security-integration?pivots=mdssc-ga).
 
-#### Device Actions
+### Device Actions
 
 Some actions on devices:
 
