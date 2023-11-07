@@ -26,6 +26,10 @@ Safe Attachment bypass:
 
 MS documentation of [Auditing Standard/Premium](https://learn.microsoft.com/en-us/purview/audit-solutions-overview).
 
+Key differences between [Audit Standard and Premium](https://learn.microsoft.com/en-us/purview/audit-solutions-overview#comparison-of-key-capabilities).
+
+What could be found in [audit logs](https://learn.microsoft.com/en-us/purview/audit-log-activities)?
+
 ---
 
 ## Defender for Endpoint
