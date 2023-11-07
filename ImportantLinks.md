@@ -28,7 +28,7 @@ MS documentation of [Auditing Standard/Premium](https://learn.microsoft.com/en-u
 
 Key differences between [Audit Standard and Premium](https://learn.microsoft.com/en-us/purview/audit-solutions-overview#comparison-of-key-capabilities).
 
-What could be found in [audit logs](https://learn.microsoft.com/en-us/purview/audit-log-activities)?
+What could be found in [Audit logs](https://learn.microsoft.com/en-us/purview/audit-log-activities)?
 
 ---
 
