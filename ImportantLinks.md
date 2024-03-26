@@ -11,14 +11,14 @@ Link: <https://support.knowbe4.com/hc/en-us/articles/115004326408-How-to-Bypass-
 Safe Attachment bypass:
 
 1. Create a new mail flow rule in your Microsoft 365 Exchange admin center.
-2. Give the rule a name such as Bypass Safe Attachments.
-3. Click more options.
-4. From the Apply this rule if… drop-down, select The senders then select IP address is in any of these ranges or exactly matches.
-5. Enter our IP addresses. Please see this article for the most up-to-date list of our IP addresses. _(Hint: Other conditions could be used as well.)_
-5. From the Do the following… drop-down, select Modify the message properties... and then set a message header.
-2. Click the first *Enter text... link and set the message header to: X-MS-Exchange-Organization-SkipSafeAttachmentProcessing
-3. Click the second *Enter text... link and set the value to: 1
-4. Click Save.
+1. Give the rule a name such as Bypass Safe Attachments.
+1. Click more options.
+1. From the Apply this rule if… drop-down, select The senders then select IP address is in any of these ranges or exactly matches.
+1. Enter our IP addresses. Please see this article for the most up-to-date list of our IP addresses. _(Hint: Other conditions could be used as well.)_
+1. From the Do the following… drop-down, select Modify the message properties... and then set a message header.
+1. Click the first *Enter text... link and set the message header to: X-MS-Exchange-Organization-SkipSafeAttachmentProcessing
+1. Click the second *Enter text... link and set the value to: 1
+1. Click Save.
 
 ---
 
@@ -35,6 +35,7 @@ What could be found in [Audit logs](https://learn.microsoft.com/en-us/purview/au
 ## Defender for Endpoint
 
 ### Configuration in Intune portal
+
 Configuration settings via [Intune](https://endpoint.microsoft.com) _without_ device registration: [MS documentation](https://learn.microsoft.com/en-us/mem/intune/protect/mde-security-integration?pivots=mdssc-ga).
 
 ### Device Actions
@@ -69,6 +70,10 @@ In short, the remediation actions are:
 
 For more Information, [click here](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/manage-auto-investigation?view=o365-worldwide).
 
+### PowerShell Module
+
+Microsoft does not provide a specific PowerShell module für MDE. Instead, try [this](https://github.com/alexverboon/PSMDATP).
+
 ---
 
 ## Defender for Cloud
@@ -86,4 +91,4 @@ Required Roles to use MDC as Admin or Viewer:
 - Azure RBAC Security Administrator
 - Azure RBAC Security Reader
 
-Link: https://learn.microsoft.com/en-us/azure/defender-for-cloud/permissions
+Link: <https://learn.microsoft.com/en-us/azure/defender-for-cloud/permissions>
