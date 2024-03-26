@@ -50,6 +50,25 @@ Some actions on devices:
 
 Other actions on devices: [MS documentation](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/respond-machine-alerts?view=o365-worldwide).
 
+### Automated Investigation
+
+Automated investigation is started cause of an alert or manually created trigger.
+
+For more Information click [here](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/automated-investigations?view=o365-worldwide).
+
+### Remediation Actions following an automated investigation
+
+In short, the remediation actions are:
+
+- Quarantine a file
+- Remove a registry key
+- Kill a process
+- Stop a service
+- Disable a driver
+- Remove a scheduled task
+
+For more Information, [click here](https://learn.microsoft.com/en-us/microsoft-365/security/defender-endpoint/manage-auto-investigation?view=o365-worldwide).
+
 ---
 
 ## Defender for Cloud

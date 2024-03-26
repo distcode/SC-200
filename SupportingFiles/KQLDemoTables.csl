@@ -1,3 +1,12 @@
+let myServers = datatable (Hostname:string, Memory:real, CPU:int, Type:string) [
+    "Jupiter",16384,32,"Server",
+    "Mars",8192,8,"Server" ];
+let myClients = datatable (Hostname:string, Memory:real, CPU:int, Type:string) [
+    "PC01",4096,4,"Client",
+    "PC02",4096,4,"Client",
+    "PC03",2048,2,"Client",
+    "PC04",8192,4,"Client", ];
+
 let myHosts = datatable (Hostname:string, Memory:real, CPU:int, Type:string) [
     "Jupiter",16384,32,"Server",
     "Mars",8192,8,"Server",
