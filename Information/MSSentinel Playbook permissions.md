@@ -1,6 +1,6 @@
 # Microsoft Sentinel Playbook permissions
 
-:exlamation: To run playbooks successfully in Microsoft Sentinel:
+:exclamation: To run playbooks successfully in Microsoft Sentinel:
 'You must have owner permissions on any resource group to which you want to grant Microsoft Sentinel permissions, and you must have the Logic App Contributor role on any resource group containing playbooks you want to run.
 
 Also, refer to this <https://learn.microsoft.com/en-us/azure/sentinel/roles> Roles and permissions required for Microsoft Sentinel.
@@ -15,8 +15,10 @@ Microsoft Sentinel uses playbooks for automated threat response. Playbooks are b
 
 Give Microsoft Sentinel permissions to run playbooks
 
-Microsoft Sentinel uses a special service account to run incident-trigger playbooks manually or to call them from automation rules. The use of this account (as opposed to your user account) increases the security level of the service.
+Microsoft Sentinel uses a special service account[^1] to run incident-trigger playbooks manually or to call them from automation rules. The use of this account (as opposed to your user account) increases the security level of the service.
 
 For an automation rule to run a playbook, this account must be granted explicit permissions to the resource group where the playbook resides. At that point, any automation rule can run any playbook in that resource group. To grant these permissions to this service account, your account must have Owner permissions to the resource groups containing the playbooks.
 
 ...'
+
+[^1]: Azure Security Insights
