@@ -1,6 +1,14 @@
-# Some important links
+# Some important links and additional information
 
 ---
+
+## Defender XDR - Investigation & Responses
+
+This [articles](https://learn.microsoft.com/en-us/microsoft-365/security/defender/m365d-remediation-actions?view=o365-worldwide) describes the possible remediation actions. As you can read, only MDO, MDE and Users in Defender XDR support investigation and response:
+
+|Device (endpoint) remediation actions|Email remediation actions|Users (accounts)|
+|---|---|---|
+| <ul><li>Collect investigation package</li><li>Isolate device (this action can be undone)</li><li>Offboard machine</li><li>Release code execution</li><li>Release from quarantine</li><li>Request sample</li><li>Restrict code execution (this action can be undone)</li><li>Run antivirus scan</li><li>Stop and quarantine</li><li>Contain devices from the network</li></ul>|<ul><li>Block URL (time-of-click)</li><li>Soft delete email messages or clusters</li><li>Quarantine email</li><li>Quarantine an email attachment</li><li>Turn off external mail forwarding</li></ul>|<ul><li>Disable user</li><li>Reset user password</li><li>Confirm user as compromised</li></ul>|
 
 ## Defender for Office 365
 

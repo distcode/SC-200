@@ -21,4 +21,6 @@ For an automation rule to run a playbook, this account must be granted explicit 
 
 ...'
 
+
+
 [^1]: Azure Security Insights
