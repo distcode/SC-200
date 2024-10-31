@@ -1,3 +1,5 @@
+
+// Demo UNION
 let myServers = datatable (Hostname:string, Memory:real, CPU:int, Type:string) [
     "Jupiter",16384,32,"Server",
     "Mars",8192,8,"Server" ];
@@ -7,6 +9,7 @@ let myClients = datatable (Hostname:string, Memory:real, CPU:int, Type:string) [
     "PC03",2048,2,"Client",
     "PC04",8192,4,"Client", ];
 
+// Demo JOIN
 let myHosts = datatable (Hostname:string, Memory:real, CPU:int, Type:string) [
     "Jupiter",16384,32,"Server",
     "Mars",8192,8,"Server",
@@ -30,12 +33,14 @@ let myHosts = datatable (Hostname:string, Memory:real, CPU:int, Type:string, Dis
     "PC03.earth.com",2048,2,"Client",256,
     "PC04.earth.com",8192,4,"Client",1024 ];
 
+// Demo PARSE
 let myPlanets = datatable (Item:int, Statement:string) [
     1, "The planet Mercury has a circumference of 15330 km and a mass of 0.33 E+24 kg.",
     2, "The planet Venus has a circumference of 38023 km and a mass of 4.87 E+24 kg.",
     3, "The planet Earth has a circumference of 40075 km and a mass of 5.97 E+24 kg.",
     4, "The planet Mars has a circumference of 21344 km and a mass of 0.64 E+24 kg." ];
 
+// Demo Array/Json
 let myHostsDetailed = datatable (Hostname:string, Hardware:dynamic , Software:dynamic , Location:string , Devices:dynamic ) [
     "Jupiter", dynamic({"RAM":8192,"CPU":12,"DiskCapacityGB":512,"DiskCount":6,"DiskVendor":"WD"}), dynamic([{"Product":"Exchange","Vendor":"Microsoft","Version":"2019","BuiltIn":false},{"Product":"FileServer","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Graz", dynamic(["Mouse","FIDO2-USB"]),
     "Saturn", dynamic({"RAM":8192,"CPU":8,"DiskCapacityGB":768,"DiskCount":12,"DiskVendor":"WD"}), dynamic([{"Product":"SharePoint","Vendor":"Microsoft","Version":"2019","BuiltIn":false},{"Product":"DC","Vendor":"Microsoft","Version":"2022","BuiltIn":true},{"Product":"DNS","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Graz", dynamic(["Mouse","iPhone"]),
