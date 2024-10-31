@@ -1,0 +1,163 @@
+
+// UNION with Renaming
+let myServers = datatable (Hostname: string, Memory: real, CPU: int, Type: string) [
+    "Jupiter", 16384, 32, "Server",
+    "Mars", 8192, 8, "Server"
+];
+let myClients = datatable (Computername: string, Memory: real, CPU: int, Type: string) [
+    "PC01", 4096, 4, "Client",
+    "PC02", 4096, 4, "Client",
+    "PC03", 2048, 2, "Client",
+    "PC04", 8192, 4, "Client",
+];
+let myRenamedClients = myClients
+    | project-rename Hostname = Computername;
+union myServers, myRenamedClients
+
+
+// Table from Azure Blob store
+let myExternalData = externaldata ( Name:string, OS:string,RAM:int, IP:string,CPU:int) 
+[@"https://distsacoursestaff.blob.core.windows.net/demodata/computers.csv" ]
+with (ignoreFirstRecord=true);
+myExternalData
+
+let myExternalData = externaldata ( Name:string, OS:string,RAM:int, IP:string,CPU:int) 
+[@"https://distsacoursestaff.blob.core.windows.net/demodata/computers.csv" ]
+with (ignoreFirstRecord=true);
+let myHosts = datatable (Hostname:string, Memory:real, CPU:int, Type:string) [
+    "Jupiter",16384,32,"Server",
+    "Mars",8192,8,"Server",
+    "PC01",4096,4,"Client",
+    "PC02",4096,4,"Client",
+    "PC03",2048,2,"Client",
+    "PC04",8192,4,"Client", ];
+union myHosts,myExternalData
+
+// Table form Github
+let myIPs = externaldata (network:string,geoname_id:long,continent_code:string,continent_name:string,country_iso_code:string,country_name:string , is_anonymous_proxy:bool , is_satellite_provider:bool )
+[ @"https://raw.githubusercontent.com/datasets/geoip2-ipv4/master/data/geoip2-ipv4.csv" ];
+myIPs
+
+// Arrays
+let planets = dynamic(['Merkur','Venus','Erde','Mars']);
+print planets,planets[1]
+
+// Using arrays with WHERE statements
+let planets = dynamic(['Merkur','Venus','Erde','Mars','Jupiter','Saturn','Uranus','Neptun']);
+let myHosts = datatable (Hostname:string, Memory:real, CPU:int, Type:string) [
+    "Jupiter",16384,32,"Server",
+    "Mars",8192,8,"Server",
+    "PC01",4096,4,"Client",
+    "PC02",4096,4,"Client",
+    "PC03",2048,2,"Client",
+    "PC04",8192,4,"Client", ];
+myHosts
+| where Hostname in (planets)
+
+let myHosts = datatable (Hostname:string, Memory:real, CPU:int, Type:string) [
+    "Jupiter",16384,32,"Server",
+    "Mars",8192,8,"Server",
+    "PC01",4096,4,"Client",
+    "PC02",4096,4,"Client",
+    "PC03",2048,2,"Client",
+    "PC04",8192,4,"Client", ];
+myHosts
+| where Hostname in (dynamic(['Merkur','Venus','Erde','Mars','Jupiter','Saturn','Uranus','Neptun']))
+
+
+// Generating Arrays of query results
+Update
+| summarize by Classification
+| summarize make_list(Classification)
+
+// Generating arrays make_list() vs. make_set()
+let myHosts = datatable (Hostname:string, Memory:real, CPU:int, Type:string) [
+    "Jupiter",16384,32,"Server",
+    "Mars",8192,8,"Server",
+    "PC01",4096,4,"Client",
+    "PC02",4096,4,"Client",
+    "PC03",2048,2,"Client",
+    "PC04",8192,4,"Client",
+    "Mars",4096,16,"Server" ];
+myHosts
+| summarize make_list(Hostname) by Type
+
+let myHosts = datatable (Hostname:string, Memory:real, CPU:int, Type:string) [
+    "Jupiter",16384,32,"Server",
+    "Mars",8192,8,"Server",
+    "PC01",4096,4,"Client",
+    "PC02",4096,4,"Client",
+    "PC03",2048,2,"Client",
+    "PC04",8192,4,"Client",
+    "Mars",4096,16,"Server" ];
+myHosts
+| summarize make_set(Hostname) by Type
+
+
+// Expanding Arrays from tables
+let myHostsDetailed = datatable (Hostname:string, Hardware:dynamic , Software:dynamic , Location:string , Devices:dynamic ) [
+    "Jupiter", dynamic({"RAM":8192,"CPU":12,"DiskCapacityGB":512,"DiskCount":6,"DiskVendor":"WD"}), dynamic([{"Product":"Exchange","Vendor":"Microsoft","Version":"2019","BuiltIn":false},{"Product":"FileServer","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Graz", dynamic(["Mouse","FIDO2-USB"]),
+    "Saturn", dynamic({"RAM":8192,"CPU":8,"DiskCapacityGB":768,"DiskCount":12,"DiskVendor":"WD"}), dynamic([{"Product":"SharePoint","Vendor":"Microsoft","Version":"2019","BuiltIn":false},{"Product":"DC","Vendor":"Microsoft","Version":"2022","BuiltIn":true},{"Product":"DNS","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Graz", dynamic(["Mouse","iPhone"]),
+    "Neptune", dynamic({"RAM":4096,"CPU":2,"DiskCapacityGB":256,"DiskCount":4,"DiskVendor":"IBM"}), dynamic([{"Product":"S/4HANA","Vendor":"SAP","Version":"2021","BuiltIn":false},{"Product":"PrintServer","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Linz", dynamic(["Pen","iPhone"]),
+    "Uranos", dynamic({"RAM":6144,"CPU":8,"DiskCapacityGB":512,"DiskCount":8,"DiskVendor":"IBM"}), dynamic([{"Product":"Exchange","Vendor":"Microsoft","Version":"2019","BuiltIn":false},{"Product":"DC","Vendor":"Microsoft","Version":"2022","BuiltIn":true},{"Product":"DNS","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Linz", dynamic(["Mouse","FIDO2-USB"])
+];
+myHostsDetailed
+| project Hostname,Location,Devices
+// | where Devices contains "iPhone"
+| mv-expand Devices
+| where Devices == 'Mouse'
+
+
+// Generating property bags (= json formatted object) with function dynamic
+let myJSON = dynamic({"Marke":"Ferrari","Farbe":'Rot','Zylinder':12,'Coupe':false} );
+print myJSON,myJSON.Marke,myJSON.Coupe
+
+// Expanding  property bags (= json formatted object) from tables
+let myHostsDetailed = datatable (Hostname:string, Hardware:dynamic , Software:dynamic , Location:string , Devices:dynamic ) [
+    "Jupiter", dynamic({"RAM":8192,"CPU":12,"DiskCapacityGB":512,"DiskCount":6,"DiskVendor":"WD"}), dynamic([{"Product":"Exchange","Vendor":"Microsoft","Version":"2019","BuiltIn":false},{"Product":"FileServer","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Graz", dynamic(["Mouse","FIDO2-USB"]),
+    "Saturn", dynamic({"RAM":8192,"CPU":8,"DiskCapacityGB":768,"DiskCount":12,"DiskVendor":"WD"}), dynamic([{"Product":"SharePoint","Vendor":"Microsoft","Version":"2019","BuiltIn":false},{"Product":"DC","Vendor":"Microsoft","Version":"2022","BuiltIn":true},{"Product":"DNS","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Graz", dynamic(["Mouse","iPhone"]),
+    "Neptune", dynamic({"RAM":4096,"CPU":2,"DiskCapacityGB":256,"DiskCount":4,"DiskVendor":"IBM"}), dynamic([{"Product":"S/4HANA","Vendor":"SAP","Version":"2021","BuiltIn":false},{"Product":"PrintServer","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Linz", dynamic(["Pen","iPhone"]),
+    "Uranos", dynamic({"RAM":6144,"CPU":8,"DiskCapacityGB":512,"DiskCount":8,"DiskVendor":"IBM"}), dynamic([{"Product":"Exchange","Vendor":"Microsoft","Version":"2019","BuiltIn":false},{"Product":"DC","Vendor":"Microsoft","Version":"2022","BuiltIn":true},{"Product":"DNS","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Linz", dynamic(["Mouse","FIDO2-USB"])
+];
+myHostsDetailed
+| project Hostname, Hardware
+//| where Hardware.DiskVendor == 'IBM'
+| evaluate bag_unpack(Hardware)
+
+
+// Expanding of arrays of property bags 
+let myHostsDetailed = datatable (Hostname:string, Hardware:dynamic , Software:dynamic , Location:string , Devices:dynamic ) [
+    "Jupiter", dynamic({"RAM":8192,"CPU":12,"DiskCapacityGB":512,"DiskCount":6,"DiskVendor":"WD"}), dynamic([{"Product":"Exchange","Vendor":"Microsoft","Version":"2019","BuiltIn":false},{"Product":"FileServer","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Graz", dynamic(["Mouse","FIDO2-USB"]),
+    "Saturn", dynamic({"RAM":8192,"CPU":8,"DiskCapacityGB":768,"DiskCount":12,"DiskVendor":"WD"}), dynamic([{"Product":"SharePoint","Vendor":"Microsoft","Version":"2019","BuiltIn":false},{"Product":"DC","Vendor":"Microsoft","Version":"2022","BuiltIn":true},{"Product":"DNS","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Graz", dynamic(["Mouse","iPhone"]),
+    "Neptune", dynamic({"RAM":4096,"CPU":2,"DiskCapacityGB":256,"DiskCount":4,"DiskVendor":"IBM"}), dynamic([{"Product":"S/4HANA","Vendor":"SAP","Version":"2021","BuiltIn":false},{"Product":"PrintServer","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Linz", dynamic(["Pen","iPhone"]),
+    "Uranos", dynamic({"RAM":6144,"CPU":8,"DiskCapacityGB":512,"DiskCount":8,"DiskVendor":"IBM"}), dynamic([{"Product":"Exchange","Vendor":"Microsoft","Version":"2019","BuiltIn":false},{"Product":"DC","Vendor":"Microsoft","Version":"2022","BuiltIn":true},{"Product":"DNS","Vendor":"Microsoft","Version":"2022","BuiltIn":true}]), "Linz", dynamic(["Mouse","FIDO2-USB"])
+];
+myHostsDetailed
+| project Hostname,Software
+| mv-expand Software
+| evaluate bag_unpack(Software)
+| where Vendor == 'SAP'
+
+
+// Converting datatypes
+let myValue = 100;
+print myValue,toreal(myValue), tostring(myValue),tohex(myValue)
+
+// Searching and extracting values from text
+// Hint: Search for string functions in KQL documentation
+let myPlanets = datatable (Item:int, Statement:string) [
+    1, "The planet Mercury has a circumference of 15330 km and a mass of 0.33 E+24 kg.",
+    2, "The planet Venus has a circumference of 38023 km and a mass of 4.87 E+24 kg.",
+    3, "The planet Earth has a circumference of 40075 km and a mass of 5.97 E+24 kg.",
+    4, "The planet Mars has a circumference of 21344 km and a mass of 0.64 E+24 kg." ];
+myPlanets
+| parse Statement with * "planet " planetname:string " has a circumference of " circumf:int " km and a mass of" mass:real " E" *
+| project Item,planetname,circumf,mass
+| getschema 
+
+// Extracting values from text with regex
+// use: https://regex101.com for building and testing regex
+Update
+| distinct Computer,Classification
+| extend hostname = extract('^[a-zA-Z0-9-]+',0,Computer)
+| extend domain = extract(@'(^[a-zA-Z0-9-]+)\.(.+)',2,Computer)
