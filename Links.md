@@ -10,7 +10,15 @@ This [articles](https://learn.microsoft.com/en-us/microsoft-365/security/defende
 |---|---|---|
 | <ul><li>Collect investigation package</li><li>Isolate device (this action can be undone)</li><li>Offboard machine</li><li>Release code execution</li><li>Release from quarantine</li><li>Request sample</li><li>Restrict code execution (this action can be undone)</li><li>Run antivirus scan</li><li>Stop and quarantine</li><li>Contain devices from the network</li></ul>|<ul><li>Block URL (time-of-click)</li><li>Soft delete email messages or clusters</li><li>Quarantine email</li><li>Quarantine an email attachment</li><li>Turn off external mail forwarding</li></ul>|<ul><li>Disable user</li><li>Reset user password</li><li>Confirm user as compromised</li></ul>|
 
+---
+
 ## Defender for Office 365
+
+### Features and capabilities of Defender for Office 365
+
+[Microsoft 365 and Office 365 service descriptions](https://learn.microsoft.com/en-us/office365/servicedescriptions/microsoft-defender-for-office-365-features)
+
+### Bypassing Safe Attachment or Safe Link policies
 
 To bypass Safe Attachment or Safe Link policies a Transport/Mail flow rule must be created. This rule(s) are adding specific headers causing the policies are not processed.
 
