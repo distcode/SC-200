@@ -1,0 +1,6 @@
+Hostname,IPAddress,Location,OS
+asterix.trg.dist.local,10.222.0.91,Paris,Windows Server 2019
+julius.trg.dist.local,10.222.0.92,Rom,Windows Server 2025
+kleopatra.trg.dist.local,10.222.0.93,Kairo,Linux Ubuntu 22.04
+tefax.trg.dist.local,10.222.0.94,London,Linux Ubuntu 18.04
+grautvornix.trg.dist.local,10.222.0.95,Oslo,Windows Server 2019

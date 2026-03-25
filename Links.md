@@ -102,7 +102,7 @@ Protect your workloads
 Required Roles to use MDC as Admin or Viewer:
 
 - Owner
-- Contributer
+- Contributor
 - Reader
 - Azure RBAC Security Administrator
 - Azure RBAC Security Reader
